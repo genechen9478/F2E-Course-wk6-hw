@@ -1,0 +1,192 @@
+:root {
+  --primary: #778A50;
+  --background: #EDF2C5;
+  --content-text: #7D7D7D;
+  --content-bg: #F7FBDA;
+}
+
+* { box-sizing: border-box; }
+
+html { min-width: 320px; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--content-text);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+}
+
+.page-width {
+  width: min(940px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.header-top {
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.account-links { display: flex; align-items: center; gap: 9px; }
+.social-icon {
+  width: 20px; height: 20px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--primary); color: var(--background);
+  font-weight: 900; font-size: 17px; text-decoration: none;
+}
+
+.instagram { font-size: 19px; }
+.account-divider { height: 20px; border-left: 1px solid var(--primary); margin: 0 2px; }
+.small-button {
+  border: 1px solid var(--primary);
+  border-radius: 2px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: 35px;
+  background: var(--primary);
+  border-radius: 3px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 9px 24px;
+  line-height: 17px;
+}
+
+.main-nav a:hover, .main-nav a:focus-visible { background: #657744; }
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 52px;
+  margin-top: 24px;
+  margin-bottom: 35px;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-heading {
+  margin: 0 0 12px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border-radius: 2px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.vegetable-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.vegetable-card { min-width: 0; background: var(--content-bg); }
+
+.vegetable-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.vegetable-card p {
+  margin: 0;
+  padding: 8px 10px 12px;
+  color: #444;
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.contact-panel {
+  flex: 1;
+  min-height: 0;
+  background: var(--content-bg);
+  padding: 14px 12px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.contact-panel p { margin: 0; }
+
+.contact-panel hr {
+  border: 0;
+  border-top: 1px solid #aaa;
+  margin: 80px 0 5px;
+}
+
+.contact-panel address { font-style: normal; }
+
+.contact-panel a { color: inherit; text-decoration: none; }
+.site-footer {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 2px;
+}
+
+.site-footer p { margin: 0; font-size: 10px; }
+
+@media (max-width: 720px) {
+  .header-top { min-height: 76px; }
+  .logo { font-size: 30px; }
+  .main-nav { width: 100%; border-radius: 0; overflow-x: auto; }
+  .main-nav a { padding-inline: 16px; white-space: nowrap; }
+  .hero-image { height: clamp(190px, 42vw, 300px); }
+  .content-grid { grid-template-columns: 1fr; gap: 24px; }
+  .contact-panel { min-height: auto; }
+  .contact-panel hr { margin: 28px 0; }
+}
+
+@media (max-width: 430px) {
+  .page-width { width: calc(100% - 24px); }
+  .header-top { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; padding-block: 12px; }
+  .logo { font-size: 28px; }
+  .account-links { align-self: flex-end; }
+  .vegetable-cards { gap: 8px; }
+  .vegetable-card p { padding: 7px; font-size: 9px; }
+}
